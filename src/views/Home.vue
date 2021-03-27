@@ -1,15 +1,16 @@
 <template>
 <div class="home">
   <div class="header">
-    <h1 @click="random">ようこそ</h1>
+    <h1>ようこそ</h1>
     <h2>Share With Driverへ</h2>
   </div>
   <div class="main">
     <section class="left">
       <div class="call-left">
       <h1>近くの人と話す</h1>
-      <div @click="random" class="button-left">
-        <a @click="transition()" href="#" class="btn btn-flat"><span>通話開始</span></a>
+      <div class="button-left">
+        <a @click="transition()" href="#" class="btn btn-flat">
+          <span>通話開始</span></a>
       </div>
       <p class="caution-left">※位置情報から近くの人と通話を開始します。</p>
       </div>
@@ -272,17 +273,16 @@ export default {
   data() {
     return {
       randomId: ""
-    }
+    };
   },
   methods: {
     transition() {
       this.$router.push({ name: "Load" });
-    }
     },
-    created() {
-      createId();
+    createId() {
       this.randomId = Math.random();
       console.log( this.randomId );
+    }
   }
 }
 </script>
